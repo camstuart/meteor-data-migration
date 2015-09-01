@@ -4,9 +4,6 @@
 Meteor.methods({
     'importToDoData': function() {
         importer = new ImportToDoData(Meteor.settings.source_db);
-
-        //Todos.remove({});
-        //Lists.remove({});
-
+        importer.import()
     }
 });
