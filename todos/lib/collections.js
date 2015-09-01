@@ -13,3 +13,15 @@ Lists.defaultName = function() {
 };
 
 Todos = new Mongo.Collection('todos');
+TodosSchema = new SimpleSchema({
+    text: {
+        type: String,
+        label: "Title",
+        max: 200
+    },
+    listId: {
+        type: String,
+        label: "List ID"
+    }
+});
+Todos.attachSchema(TodosSchema);

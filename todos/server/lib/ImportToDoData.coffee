@@ -29,6 +29,7 @@ class @ImportToDoData extends @ImportBase
 
     lists.forEach (sourceListRecord) ->
       newList.name = sourceListRecord.title
+      newList.incompleteCount = 0
       listId = Lists.insert newList
       console.log "> New list item: '#{newList.name}' inserted with _id: '#{listId}'"
 
@@ -38,7 +39,17 @@ class @ImportToDoData extends @ImportBase
       todos.forEach (sourceTaskRecord) ->
         newTodo.listId = listId
         newTodo.text = sourceTaskRecord.text
-        todoId = Todos.insert newTodo
-        console.log ">> New todo item: '#{newTodo.text}' inserted with _id: '#{todoId}'"
+
+        TodosSchema.clean newTodo
+        if TodosSchema.namedContext("todoContext").validate(newTodo)
+          todoId = Todos.insert newTodo
+          console.log ">> New todo item: '#{newTodo.text}' inserted with _id: '#{todoId}'"
+        else
+          console.error "> New Todo: '#{newTodo.text}' is NOT valid"
+          context = TodosSchema.namedContext('todoContext')
+          console.error context.invalidKeys()
+          return
+
+
 
 ################################################################################

@@ -20,7 +20,7 @@ CREATE TABLE `user` (
 DROP TABLE IF EXISTS `task`;
 CREATE TABLE `task` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `text` varchar(100) NOT NULL,
+  `text` varchar(200),
   `created` datetime NOT NULL,
   `done` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `user_id` int(10) unsigned NOT NULL,
@@ -51,4 +51,6 @@ INSERT INTO `task` (`id`, `text`, `created`, `done`, `user_id`, `list_id`) VALUE
 (4,	'Make dinner reservations',	'2011-12-10 16:10:40',	0,	3,	2),
 (5,	'Return library books',	'2011-12-10 17:44:32',	0,	2,	2),
 (6,	'Take out the trash',	'2011-12-12 10:42:31',	0,	2,	2),
-(7,	'Buy gift for Jane',	'2011-12-12 10:53:13',	0,	2,	2);
+(7,	'Buy gift for Jane',	'2011-12-12 10:53:13',	0,	2,	2),
+(8,	'Present at @MelbMeteor           ',	'2011-12-06 12:35:50',	0,	3,	1),
+(9,	null,	'2011-12-06 12:35:50',	0,	3,	1);

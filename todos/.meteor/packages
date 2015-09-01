@@ -11,3 +11,5 @@ iron:router@0.9.4
 accounts-password
 coffeescript
 dburles:mongo-collection-instances
+aldeed:collection2
+aldeed:simple-schema
