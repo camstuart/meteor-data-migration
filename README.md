@@ -20,10 +20,23 @@ git clone git@github.com:camstuart/meteor-data-migration.git
 git checkout b99ad702c2f729973829b5ef56b95802f2feb193
 ```
 
+Affected files:
+
+```
+todos/lib/router.js
+```
+
 ### Stage 2 - Call a webhook instead:
 
 ```
 git checkout bf4b37a31d5656bdbfb5d99e941005de2e275a1f
+```
+
+Affected files:
+
+```
+todos/server/bootstrap.js
+todos/server/methods/ImportData.js
 ```
 
 ### Stage 3 - Where is the loading code going to live?
@@ -32,10 +45,31 @@ git checkout bf4b37a31d5656bdbfb5d99e941005de2e275a1f
 git checkout 5ebab7202ffe0aee03c3028b91a5e8a7adc1f866
 ```
 
+Affected files:
+
+```
+todos/.meteor/packages
+todos/config/settings.dev.json
+todos/server/lib/ImportBase.coffee
+todos/server/lib/ImportToDoData.coffee
+todos/server/methods/ImportData.js
+```
+
 ### Stage 4 - Connection to MySQL with failed attempt to insert into local mongodb
 
 ```
 git checkout 5168930c39f0f181105b85ef0c76034cf54b0ca9
+```
+
+Affected files:
+
+```
+data/load_mysql.sh
+data/todo.mysql.sql
+todos/.meteor/packages
+todos/server/lib/ImportBase.coffee
+todos/server/lib/ImportToDoData.coffee
+todos/server/methods/ImportData.js
 ```
 
 ### Stage 5 - Mysql to Mongo to Meteor Mongo 
@@ -44,8 +78,28 @@ git checkout 5168930c39f0f181105b85ef0c76034cf54b0ca9
 git checkout 0a98cda6536377ebde6863963c2b9804365be9fd
 ```
 
+Affected files:
+
+```
+data/mysql2mongo.pl
+todos/.meteor/packages
+todos/server/lib/ImportBase.coffee
+todos/server/lib/ImportToDoData.coffee
+```
+
 ### Stage 6 - Validate data with simple schema
+
 
 ```
 git checkout 8e99311715a0cf44fac4f688256e4c63583b7153
+```
+
+Affected files:
+
+```
+data/load_mysql.sh
+data/todo.mysql.sql
+todos/.meteor/packages
+todos/server/lib/ImportToDoData.coffee
+todos/lib/collections.js
 ```
