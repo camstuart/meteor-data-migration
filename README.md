@@ -1,8 +1,8 @@
 # Migrating legacy data to a Meteor Application
 
-Source code examples to accompany [Google Slides](https://docs.google.com/presentation/d/1bwcvMLBo70jeSwG5qlekNaMxFgsUiFKhzW5Wi5Ks00k/edit?usp=sharing)
+Source code examples to accompany [Google Slides](https://docs.google.com/presentation/d/1bwcvMLBo70jeSwG5qlekNaMxFgsUiFKhzW5Wi5Ks00k/edit?usp=sharing) And [YouTube videos here](https://www.youtube.com/watch?v=gOCevRP8VUk&list=PLqoJDYdHr0dgyfQq7jp13caF3pVPMUmrn&index=6)
 
-Prepared for [Melbourne Meteor #22](http://www.meetup.com/Meteor-Melbourne/events/223647433/) by Cameron Stuart 
+Prepared for [Melbourne Meteor #22](http://www.meetup.com/Meteor-Melbourne/events/223647433/) by Cameron Stuart
 
 There are git tags specified in the presentation slides to step through the code changes
 
@@ -72,7 +72,7 @@ todos/server/lib/ImportToDoData.coffee
 todos/server/methods/ImportData.js
 ```
 
-### Stage 5 - Mysql to Mongo to Meteor Mongo 
+### Stage 5 - Mysql to Mongo to Meteor Mongo
 
 ```
 git checkout 0a98cda6536377ebde6863963c2b9804365be9fd
